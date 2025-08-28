@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.dao.StudentDAO;
+import org.example.dao.StudentDaoImpl;
 import org.example.entiny.Student;
 
 public class JpaHibernateAppMain {
@@ -8,16 +9,25 @@ public class JpaHibernateAppMain {
     public static void main(String[] args) {
 
         Student st = new Student();
-        st.setRoll(40);
-        st.setName("cool bro");
-        st.setAddress("mmm");
+        st.setRoll(401);
+        st.setName("cool boy");
+        st.setAddress("north");
         st.setMobile("1237543565");
 
-        StudentDAO studentDAO = new StudentDAO();
+        StudentDAO studentDAO = new StudentDaoImpl();
 
-        studentDAO.saveStudent(st);
+        // CREATE
+//        studentDAO.saveStudent(st);
 
-        studentDAO.getStudentByRoll(st.getRoll());
+//        // READ
+//        Student returnedStudent = studentDAO.getStudentByRoll(st.getRoll());
+//        System.out.println(returnedStudent.toString());
+//
+//        // UPDATE
+//        studentDAO.updateStudentName(401, "munna");
+//
+//        // DELETE
+        studentDAO.removeStudentByRoll(401);
 
     }
 }
